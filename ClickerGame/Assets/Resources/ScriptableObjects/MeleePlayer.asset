@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052cb368f010323459c1d83465828694, type: 3}
+  m_Name: MeleePlayer
+  m_EditorClassIdentifier: 
+  MaxHealth: 10
+  AttackSpeed: 1
+  AttackDamage: 1
+  AttackCooldown: 1.6271311
+  HitPoint: {fileID: 4409142039725524958, guid: ed7f4a6399ed1424cb1f4aa3a5ed7f9a,
+    type: 3}
+  FirePoint: {fileID: 6832333046897659237, guid: 4c67be44b2e4321428b31cd054e0c05d,
+    type: 3}
+  HitEffect: {fileID: 6751423670734270617, guid: 868d4dd5bf994b4458fe073a8f5b04af,
+    type: 3}
