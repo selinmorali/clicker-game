@@ -23,16 +23,21 @@ public class MeleePlayer : Player, IFightable
 
     public override void IdleState()
     {
-        Anim.Play("Idle_Normal_SwordAndShield");
+        Anim.SetBool("isIdle", true);
+        Anim.SetBool("isAttack", false);
+        Anim.SetBool("isDie", false);
         Target = FindTarget();
         if (Target != null)
         {
             CurrentState = CharacterStates.Fight;
         }
     }
+
     public override void FightState()
     {
-        Anim.Play("Attack02_SwordAndShiled");
+        Anim.SetBool("isAttack", true);
+        Anim.SetBool("isIdle", false);
+        Anim.SetBool("isDie", false);
         if (Target.gameObject.GetComponent<Character>().CurrentHealth > 0)
         {
             Attack();
@@ -43,11 +48,15 @@ public class MeleePlayer : Player, IFightable
             CurrentState = CharacterStates.Idle;
         }
     }
+
     public override void DeathState()
     {
-        Anim.Play("Die01_SwordAndShield");
+        Anim.SetBool("isDie", true);
+        Anim.SetBool("isIdle", false);
+        Anim.SetBool("isAttack", false);
         Destroy(gameObject, 2f);
     }
+
     public override GameObject FindTarget()
     {
         return GameObject.FindGameObjectWithTag("Enemy");
