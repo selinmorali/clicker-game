@@ -543,6 +543,7 @@ MonoBehaviour:
   CurrentHealth: 0
   Target: {fileID: 0}
   characterSO: {fileID: 11400000, guid: 2927061938611434baa6f0f2a6ce41c7, type: 2}
+  Anim: {fileID: 0}
 --- !u!1 &1805130199024542580
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2859142691705954895}
+  - component: {fileID: 7837968529092152153}
   m_Layer: 0
   m_Name: root
   m_TagString: Untagged
@@ -768,6 +770,19 @@ Transform:
   m_Father: {fileID: 2140825427461745115}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7837968529092152153
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503223599900896971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.6048286}
+  m_Center: {x: 0, y: 2.8904584e-10, z: 0.7388532}
 --- !u!1 &2605695350703861906
 GameObject:
   m_ObjectHideFlags: 0

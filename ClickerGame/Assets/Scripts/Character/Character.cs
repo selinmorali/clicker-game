@@ -9,7 +9,8 @@ public abstract class Character: MonoBehaviour
     {
         Idle,
         Fight,
-        Death
+        Death,
+        Victory
     };
     public CharacterStates CurrentState;
 
@@ -17,7 +18,7 @@ public abstract class Character: MonoBehaviour
     public float CurrentHealth;
     public GameObject Target = null;
     public CharacterSO characterSO;
-    public Animator Anim;
+    [HideInInspector]public Animator Anim;
     public void UpdateHealthBar()
     {
         HealthBar.fillAmount = CurrentHealth / characterSO.MaxHealth;
@@ -38,7 +39,7 @@ public abstract class Character: MonoBehaviour
             {
                 CurrentState = CharacterStates.Idle;
             }
-            characterSO.AttackCooldown = 2f / characterSO.AttackSpeed;
+            characterSO.AttackCooldown = 1f / characterSO.AttackSpeed;
         }
         characterSO.AttackCooldown -= Time.deltaTime;
     }

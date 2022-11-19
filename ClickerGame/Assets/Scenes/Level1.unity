@@ -481,6 +481,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 8340700117249701833, guid: f9197bc6a12317f47b1299261e9409ca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8388700416356206878, guid: f9197bc6a12317f47b1299261e9409ca,
         type: 3}
       propertyPath: m_Enabled
@@ -550,6 +555,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048825765532438084, guid: f9197bc6a12317f47b1299261e9409ca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.535
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9197bc6a12317f47b1299261e9409ca, type: 3}
@@ -647,6 +657,11 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 7446361266700698630}
+    - target: {fileID: 7837968529092152153, guid: 63320615ecffe8049960d42d14f4de40,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63320615ecffe8049960d42d14f4de40, type: 3}
 --- !u!114 &7446361266700698630 stripped
