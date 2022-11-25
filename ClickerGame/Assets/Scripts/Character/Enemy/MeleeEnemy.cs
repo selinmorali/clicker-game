@@ -54,7 +54,9 @@ public class MeleeEnemy : Enemy, IFightable
         Anim.SetBool("isDie", true);
         Anim.SetBool("isIdle", false);
         Anim.SetBool("isAttack", false);
-        Destroy(gameObject, 2f);
+        MeleePlayer.Instance.Target = null;
+        LevelManager.Instance.NextStage();
+        Destroy(gameObject);
     }
 
     public override GameObject FindTarget()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RangedEnemy : Enemy
@@ -26,6 +24,7 @@ public class RangedEnemy : Enemy
             CurrentState = CharacterStates.Fight;
         }
     }
+
     public override void FightState()
     {
         if (Target.gameObject.GetComponent<Character>().CurrentHealth > 0)
@@ -37,10 +36,13 @@ public class RangedEnemy : Enemy
             CurrentState = CharacterStates.Idle;
         }
     }
+
     public override void DeathState()
     {
+        LevelManager.Instance.NextStage();
         Destroy(gameObject);
     }
+
     public override GameObject FindTarget()
     {
         return GameObject.FindGameObjectWithTag("Player");

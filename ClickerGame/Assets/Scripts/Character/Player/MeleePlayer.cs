@@ -38,7 +38,8 @@ public class MeleePlayer : Player, IFightable
         Anim.SetBool("isAttack", true);
         Anim.SetBool("isIdle", false);
         Anim.SetBool("isDie", false);
-        if (Target.gameObject.GetComponent<Character>().CurrentHealth > 0)
+
+        if (Target != null && Target.gameObject.GetComponent<Character>().CurrentHealth > 0)
         {
             Attack();
         }
@@ -54,7 +55,7 @@ public class MeleePlayer : Player, IFightable
         Anim.SetBool("isDie", true);
         Anim.SetBool("isIdle", false);
         Anim.SetBool("isAttack", false);
-        Destroy(gameObject, 2f);
+        Destroy(gameObject);       
     }
 
     public override GameObject FindTarget()

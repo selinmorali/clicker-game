@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052cb368f010323459c1d83465828694, type: 3}
   m_Name: MeleeEnemy
   m_EditorClassIdentifier: 
-  MaxHealth: 15
+  MaxHealth: 8
   AttackSpeed: 1
   AttackDamage: 1
-  AttackCooldown: 0
+  AttackCooldown: 0.7144209
   HitPoint: {fileID: 439333297637215812, guid: dff08c8beb6397a47b59e25cf2f3c328, type: 3}
   FirePoint: {fileID: 383350974368441019, guid: 37f49799962f85c48a5481a85bfcfa5c,
     type: 3}
