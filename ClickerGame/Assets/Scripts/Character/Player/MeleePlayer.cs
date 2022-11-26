@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MeleePlayer : Player, IFightable
@@ -49,17 +50,22 @@ public class MeleePlayer : Player, IFightable
             CurrentState = CharacterStates.Idle;
         }
     }
-
-    public override void DeathState()
+    public override void DyingState()
     {
         Anim.SetBool("isDie", true);
         Anim.SetBool("isIdle", false);
         Anim.SetBool("isAttack", false);
-        Destroy(gameObject);       
+        CurrentState = CharacterStates.Death;
+    }
+    public override void DeathState()
+    {
+        Destroy(gameObject, 3f);
     }
 
     public override GameObject FindTarget()
     {
         return GameObject.FindGameObjectWithTag("Enemy");
     }
+
+
 }

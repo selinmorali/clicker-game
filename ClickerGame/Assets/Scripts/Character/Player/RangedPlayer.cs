@@ -37,9 +37,14 @@ public class RangedPlayer : Player, IFightable
             CurrentState = CharacterStates.Idle;
         }
     }
+    public override void DyingState()
+    {
+        CurrentState = CharacterStates.Death;
+    }
+
     public override void DeathState()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 3f);
     }
     public override GameObject FindTarget()
     {

@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelInfo : MonoBehaviour
-{
-    public ScriptableObject Level;
+public class LevelInfo : MonoSingleton<LevelInfo>
+{ 
+    public LevelSO Level;
 }

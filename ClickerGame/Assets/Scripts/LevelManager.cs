@@ -5,15 +5,15 @@ public class LevelManager : MonoSingleton<LevelManager>
 {
     public int CurrentStage = 1;
     public int CurrentLevel = 1;
+    public GameObject SpawnPoint;
 
-    public void NextStage()
+    public IEnumerator NextStage()
     {
-        StartCoroutine(WaitTwoSeconds());
+        yield return new WaitForSeconds(0.9f);
         FadeControl.Instance.PlayFade();
         CurrentStage++;
-    }
-    public IEnumerator WaitTwoSeconds()
-    {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
+        Instantiate(LevelInfo.Instance.Level.Enemies[CurrentStage-1], SpawnPoint.transform.position, SpawnPoint.transform.rotation);
+        UIManager.Instance.SetText();
     }
 }

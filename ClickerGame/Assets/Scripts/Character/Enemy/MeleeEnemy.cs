@@ -48,15 +48,19 @@ public class MeleeEnemy : Enemy, IFightable
             CurrentState = CharacterStates.Idle;
         }
     }
-
-    public override void DeathState()
+    public override void DyingState()
     {
         Anim.SetBool("isDie", true);
         Anim.SetBool("isIdle", false);
         Anim.SetBool("isAttack", false);
         MeleePlayer.Instance.Target = null;
-        LevelManager.Instance.NextStage();
-        Destroy(gameObject);
+        StartCoroutine(LevelManager.Instance.NextStage());
+        CurrentState = CharacterStates.Death;
+    }
+
+    public override void DeathState()
+    {
+        Destroy(gameObject, 2f);
     }
 
     public override GameObject FindTarget()

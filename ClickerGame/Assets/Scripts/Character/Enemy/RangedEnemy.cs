@@ -36,15 +36,21 @@ public class RangedEnemy : Enemy
             CurrentState = CharacterStates.Idle;
         }
     }
-
-    public override void DeathState()
+    public override void DyingState()
     {
         LevelManager.Instance.NextStage();
-        Destroy(gameObject);
+        CurrentState = CharacterStates.Death;
+    }
+    public override void DeathState()
+    {
+        
+        Destroy(gameObject, 1f);
     }
 
     public override GameObject FindTarget()
     {
         return GameObject.FindGameObjectWithTag("Player");
     }
+
+
 }
