@@ -20,6 +20,9 @@ public abstract class Player : Character
             case CharacterStates.Fight:
                 FightState();
                 break;
+            case CharacterStates.Dying:
+                DyingState();
+                break;
             case CharacterStates.Death:
                 DeathState();
                 break;
@@ -31,6 +34,8 @@ public abstract class Player : Character
     public abstract void IdleState();
 
     public abstract void FightState();
+
+    public abstract void DyingState();
 
     public abstract void DeathState();
 

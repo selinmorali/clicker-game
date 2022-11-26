@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +7,7 @@ public abstract class Character: MonoBehaviour
     {
         Idle,
         Fight,
+        Dying,
         Death,
         Victory
     };
@@ -50,9 +49,9 @@ public abstract class Character: MonoBehaviour
 
     public void CheckHealth()
     {
-        if(CurrentHealth <= 0)
+        if(CurrentState != CharacterStates.Death && CurrentHealth <= 0)
         {
-            CurrentState = CharacterStates.Death;
+            CurrentState = CharacterStates.Dying;
         }
     }
 }

@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public abstract class Enemy : Character
 {
     private void Start()
@@ -18,6 +17,9 @@ public abstract class Enemy : Character
             case CharacterStates.Fight:
                 FightState();
                 break;
+            case CharacterStates.Dying:
+                DyingState();
+                break;
             case CharacterStates.Death:
                 DeathState();
                 break;
@@ -30,6 +32,7 @@ public abstract class Enemy : Character
 
     public abstract void FightState();
 
+    public abstract void DyingState();
     public abstract void DeathState();
 
     public abstract GameObject FindTarget();
